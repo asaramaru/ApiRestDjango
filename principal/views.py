@@ -9,7 +9,7 @@ from rest_framework import viewsets
 
 # Create your views here.
 #Funcion para ver la lista de libros
-def principal(request):
+'''def principal(request):
 	libro = Libro.objects.all()
 	return render(request,'principal/biblioteca.html',{
 		'libro':libro,
@@ -50,7 +50,7 @@ def editarLibros(request,id_libro):
 def eliminarLibros(request,id_libro):
 	libro= Libro.objects.get(id=id_libro)
 	libro.delete()
-	return redirect('principal')
+	return redirect('principal')'''
 
 """@api_view(['GET','POST'])
 def libro_list(request,format=None):

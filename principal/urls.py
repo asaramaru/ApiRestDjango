@@ -23,10 +23,6 @@ pueda interactuar de varias formas con la url, por ejemplo poder mandar un libro
 
 urlpatterns = [
     path('',include(router.urls)),
-    path('biblioteca/', views.principal, name='principal'),
-    path('crearLibro/', views.crearLibros, name='crearLibros'),
-    path('editarLibros/<id_libro>/', views.editarLibros, name='editarLibros'),
-    path('eliminarLibros/<id_libro>/', views.eliminarLibros, name='eliminarLibros'),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
