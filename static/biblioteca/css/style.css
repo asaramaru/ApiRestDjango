@@ -1,0 +1,21 @@
+#caja{
+	background-color: white;
+	margin: 80px 10px -60px 20px;
+	padding: 7px;
+	width: 250px;
+	height: 300px;
+	float: left;
+	border: 1px solid black;
+}
+#caja1{
+	margin-top: 3px;
+	width: 230px;
+	height: 130px;
+}
+.form_1{
+	background:rgba(0, 0, 0,0.5);
+	padding: 20px;
+	border-radius: 10px;
+	box-shadow: 0 0 30px rgba(255, 255, 255, -2);
+	color: white;
+}

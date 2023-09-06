@@ -1,0 +1,50 @@
+{% extends "principal/base.html" %}
+
+{% load static %}
+
+{% block head_content %}
+	<title>Crear libro</title>
+{% endblock %}
+
+{% block body %}
+<div class="container" id="">
+	<div class="row justify-content-center pt-5 mt-5 mr-1">
+		<div class="col-md-4 pt-3 pb-3 form_1 bg-secondary">
+			<form class="form" method="POST" enctype="multipart/form-data">
+				{% csrf_token %} 
+				<div class="form-group text-center">
+					<b><h4 class="text-light">Crear libro</h4></b>
+				</div>
+				<div class="form-group mx-sm-4 ">
+					<b><label>Autor</label></b>
+					<input type="text" name="autor" class="form-control" placeholder="¿Quién es el autor del libro?" required>
+				</div>
+				<div class="form-group mx-sm-4 ">
+					<b><label>Titulo</label></b>
+					<input type="text" name="title" class="form-control" placeholder="Nombre del libro" required>
+				</div>
+				<div class="form-group mx-sm-4 ">
+					<b><label>Descripcion</label></b>
+					<input type="text" name="description" class="form-control" placeholder="Descripcion del libro" required>
+				</div>
+				<div class="form-group mx-sm-4 ">
+					<b><label>Genero del libro</label></b>
+					<input type="text" name="type" class="form-control" placeholder="Escribe todos los generos del libro" required>
+				</div>
+				<div class="form-group mx-sm-4 ">
+					<b><label>Imagen del libro</label></b>
+					<input type="file" name="img" class="form-control" required>
+				</div>
+				<div class="form-group mx-sm-4 ">
+					<b><label>Año de publicacion</label></b>
+					<input type="date" name="year_publication" class="form-control" placeholder="Cantidad del libro" required>
+				</div>
+				<br>
+				<div class="form-group mx-sm-4 d-grid gap-2">
+					<input type="submit" name="enviar" class="enter btn btn-primary" value="Crear libro">
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+{% endblock%}

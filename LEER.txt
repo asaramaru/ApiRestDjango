@@ -1,0 +1,40 @@
+Hola, ¿Como estan?
+En este documento les explico como funciona el proyecto que hice de la biblioteca:
+1. Instalamos el framework de desarrollo web que utilice junto con los componentes para la api
+
+pip install django
+pip install djangorestframework
+pip install coreapi
+
+Luego de haber instalado lo necesario para que la aplicacion funcione, vamos ahora a configurar en este caso, se debe crear una base datos llamada biblioteca
+
+2. vamos a configurar, en archivo setting.py que esta ubicado en la carpeta biblioteca del proyecto biblioteca, abrimos el archivo y podemos verificar que yo utilizo el puerto 3307 en este es necesario cambiarlo si ustedes utilizan uno diferente:
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'biblioteca',
+        'USER': 'root',
+        'PASSWORD': '',
+        'HOST': 'localhost',
+        'PORT': '3307',
+    }
+}
+
+3. Ya configurada nuestra base de batos, vamos a ingresar al cmd, en este caso, debemos ingresar a la aplicacion biblioteca más no ingresamos a las otras aplicaciones como: biblioteca o principal, por ejemplo en mi caso es:
+C:\Users\Asaramaru\Documents\onyx\biblioteca>
+
+4. cuando ya hayamos entrado en la ruta del proyecto nos queda solo redirigir nuestra tabla Libros a la base de datos para eso vamos a utilizar los siguientes comandos:
+
+manage.py makemigrations
+manage.py migrate
+
+Estos no ayuda a tener la tabla Libros en la base de datos, no se asusten con las otras tablas ya que son por defectos del framework
+
+5. Ahora venimos por fin a probar la aplicacion, para eso utilizamos el siguiente comando:
+
+manage.py runserver
+
+Al generar este comando nos dara la ruta http://127.0.0.1:8000/ la cual no ayudara a verificar el proyecto
+
+6. Les mando un video de como funciona la aplicacion con todo lo que hice.
