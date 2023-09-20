@@ -23,7 +23,6 @@ pueda interactuar de varias formas con la url, por ejemplo poder mandar un libro
 
 urlpatterns = [
     path('',include(router.urls)),
-    
 ]#Incluimos las rutas por defecto en nuestro archivo de rutas para asi navegar entre ellas
 
 urlpatterns += static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
