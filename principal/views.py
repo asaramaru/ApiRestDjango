@@ -93,7 +93,7 @@ class LibroViewSet(viewsets.ModelViewSet): #Se crea funcion para la api, con sol
 	queryset = Libro.objects.all()  #Colocamos como variable ya preescrita segun la documentacion y que nos mande la lista de todos los libros
 	serializer_class = LibroSerializer #Serializer nos ayudara a colocor todo en json
 
-	def get_queryset():
+	def get_queryset(self):
 		genero = self.request.query_params.get('genero')
 		fecha_inicio = self.request.query_params.get('fecha_inicio')
 		fecha_fin = self.request.query_params.get('fecha_fin')
