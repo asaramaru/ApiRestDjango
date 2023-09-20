@@ -7,6 +7,7 @@ from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from rest_framework import status
 from rest_framework import viewsets
+from django_filters.rest_framework import DjangoFilterBackend
 
 # Create your views here.
 #Funcion para ver la lista de libros
@@ -93,15 +94,5 @@ class LibroViewSet(viewsets.ModelViewSet): #Se crea funcion para la api, con sol
 	queryset = Libro.objects.all()  #Colocamos como variable ya preescrita segun la documentacion y que nos mande la lista de todos los libros
 	serializer_class = LibroSerializer #Serializer nos ayudara a colocor todo en json
 
-	def get_queryset(self):
-		genero = self.request.query_params.get('genero')
-		fecha_inicio = self.request.query_params.get('fecha_inicio')
-		fecha_fin = self.request.query_params.get('fecha_fin')
-		
-		if genero and fecha_inicio and fecha_fin:
-			filtro = Libro.objects.filter(
-            genero=genero,
-            publicacion__range=(fecha_inicio, fecha_fin)
-			)			
-			
-		return filtro
+	filter_backends = [DjangoFilterBackend]
+	filterset_fields = ["genero","publicacion"]
