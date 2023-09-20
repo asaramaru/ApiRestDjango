@@ -2,7 +2,7 @@
 # exit on error
 set -o errexit
 
-pip install dj-database-url django djangorestframework whitenoise psycopg2-binary coreapi gunicorn pillow
+pip install dj-database-url django djangorestframework whitenoise psycopg2-binary coreapi gunicorn pillow requests
 
 python manage.py collectstatic --no-input
 python manage.py migrate

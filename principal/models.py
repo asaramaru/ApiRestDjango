@@ -5,7 +5,6 @@ from django.db import models
 class Libro(models.Model):
 	autor = models.CharField(max_length=100)
 	titulo = models.CharField(max_length=50, unique=True)
-	imagen = models.ImageField(upload_to='biblioteca')
 	genero = models.CharField(max_length=200)
 	descripcion = models.CharField(max_length=500)
 	publicacion = models.DateField()

@@ -81,7 +81,7 @@ WSGI_APPLICATION = 'biblioteca.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
-
+#creacion de la base de datos utilizada directamente desde render.com en ella solo podiamos utilizar postgress segun documentacion https://render.com/docs/deploy-django
 DATABASES = {
     'default': dj_database_url.config(
         # Feel free to alter this value to suit your needs.

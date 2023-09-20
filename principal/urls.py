@@ -17,13 +17,13 @@ urlpatterns = [
 urlpatterns += static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)'''
 
 router = routers.DefaultRouter() #Treamos la funcion rutas por defecto para que podamos interactuar con la api
-router.register(r'libros',views.LibroViewSet) 
+router.register(r'libros',views.LibroViewSet) #Colocamos la r al principio para que traiga todos los recursos necesarios y podamos interacturar con toda la api
 '''Registramos en una url lo que buscamos en ese caso solo es libros y la r la mandamos para que se 
 pueda interactuar de varias formas con la url, por ejemplo poder mandar un libros/1 para poder editar y que nos encuentre el registro''' 
 
 urlpatterns = [
     path('',include(router.urls)),
-]
+    path('buscarlibro/', views.LibroViewSet.as_view(), name="buscar_libros")
+]#Incluimos las rutas por defecto en nuestro archivo de rutas para asi navegar entre ellas
 
 urlpatterns += static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
-#Incluimos las rutas
