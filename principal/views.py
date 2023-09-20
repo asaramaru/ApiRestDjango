@@ -95,4 +95,4 @@ class LibroViewSet(viewsets.ModelViewSet): #Se crea funcion para la api, con sol
 	serializer_class = LibroSerializer #Serializer nos ayudara a colocor todo en json
 
 	filter_backends = [DjangoFilterBackend]
-	filterset_fields = ["genero","publicacion"]
+	filterset_fields = ["genero","publicacion__range=[inicio,fin]"]
