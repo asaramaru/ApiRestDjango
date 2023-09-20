@@ -96,5 +96,6 @@ class LibroViewSet(viewsets.ModelViewSet): #Se crea funcion para la api, con sol
 
 	filter_backends = [DjangoFilterBackend]
 	filterset_fields = [
-		"genero"["exact"],
-    	"publicacion": ["range"],]
+		"genero": ["exact"],
+    	"publicacion": ["range"],
+		]
