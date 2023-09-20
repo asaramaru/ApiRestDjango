@@ -95,12 +95,13 @@ class LibroViewSet(viewsets.ModelViewSet): #Se crea funcion para la api, con sol
 
 	def get_queryset():
 		genero = self.request.query_params.get('genero')
-        fecha_inicio = self.request.query_params.get('fecha_inicio')
-        fecha_fin = self.request.query_params.get('fecha_fin')
-
-        if genero:
-            queryset = queryset.filter(genero=genero)
-        if fecha_inicio and fecha_fin:
-            queryset = queryset.filter(publicacion__range=[fecha_inicio, fecha_fin])
-
-        return queryset
+		fecha_inicio = self.request.query_params.get('fecha_inicio')
+		fecha_fin = self.request.query_params.get('fecha_fin')
+		
+		if genero:
+			queryset = queryset.filter(genero=genero)
+			
+		if fecha_inicio and fecha_fin:
+			queryset = queryset.filter(publicacion__range=[fecha_inicio, fecha_fin])
+			
+		return queryset
